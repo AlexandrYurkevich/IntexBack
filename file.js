@@ -10,21 +10,9 @@
  });
 
  app.post('/', (req, res) => {
-   res.send('POST request to the homepage')
+   res.send('POST request')
  })
 
- app.all('/secret', (req, res, next) => {
-   console.log('Accessing the secret section ...')
-   next() // pass control to the next handler
+ app.put('/', (req, res) => {
+   res.send('PUT request')
  })
-
- app.route('/book')
-  .get((req, res) => {
-    res.send('Get a random book')
-  })
-  .post((req, res) => {
-    res.send('Add a book')
-  })
-  .put((req, res) => {
-    res.send('Update the book')
-  })
